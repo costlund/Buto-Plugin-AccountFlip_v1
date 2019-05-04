@@ -1,0 +1,30 @@
+type: div
+attribute:
+  class: alert alert-success
+  style: 'min-height:60px'
+innerHTML:
+  -
+    type: div
+    innerHTML:
+      -
+        type: a
+        attribute:
+          class: btn btn-info
+          style: 'float:right'
+          data-u: rs:username
+          onclick: "$.ajax({url : '/account_flip/signin?u='+this.getAttribute('data-u'), type : 'get', async: false, success : function(data) { console.log(JSON.parse(data)); location.href='/'; }});"
+        innerHTML: Sign in
+      -
+        type: a
+        attribute:
+          class: btn btn-warning
+          style: 'float:right'
+          data-u: rs:username
+          onclick: "if(!confirm('Are you sure?')){return false;}else{$.ajax({url : '/account_flip/delete?u='+this.getAttribute('data-u'), type : 'get', async: false, success : function(data) { PluginWfAjax.update('modal_account_flip_body'); }});}"
+        innerHTML: Delete
+      -
+        type: strong
+        innerHTML: Username
+      -
+        type: span
+        innerHTML: rs:username

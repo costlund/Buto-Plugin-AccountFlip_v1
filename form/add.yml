@@ -1,0 +1,16 @@
+url: /account_flip/capture
+ajax: true
+submit_value: Add
+id: frm_account_flip
+items:
+  username:
+    type: varchar
+    label: Username
+    mandatory: true
+  password:
+    type: password
+    label: Password
+    mandatory: true
+capture:
+  plugin: 'account/flip_v1'
+  method: capture

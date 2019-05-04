@@ -1,0 +1,32 @@
+tables:
+  account_flip:
+    _description: Account log.
+    field:
+      account_id:
+        type: varchar(50)
+        not_null: true
+        primary_key: true        
+        foreing_key:
+          reference_table: account
+          reference_field: id
+          on_delete: CASCADE
+          on_update: CASCADE
+      flip_key:
+        type: varchar(50)
+extra:
+  _description: Extra field to add to each table if not exist in schema.
+  field:
+    created_at:
+      type: timestamp
+      default: CURRENT_TIMESTAMP
+    updated_at:
+      type: timestamp
+    created_by:
+      type: varchar(50)
+    updated_by:
+      type: varchar(50)
+      
+        
+        
+        
+        

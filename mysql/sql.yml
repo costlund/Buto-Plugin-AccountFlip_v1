@@ -1,0 +1,63 @@
+replace:
+account_flip_select_by_id:
+  sql: |
+    select 
+    flip.account_id, 
+    flip.flip_key,
+    account.email,
+    account.username
+    from account_flip as flip
+    inner join account on flip.account_id=account.id
+    where flip.account_id='[user_id]';
+  select:
+    - account_id
+    - flip_key
+    - email
+    - username
+account_flip_insert_by_id:
+  sql: |
+    insert into account_flip (account_id, flip_key, created_by) values ('[user_id]', ?, '[user_id]');
+  params:
+    -
+      type: s
+      value: rs:flip_key
+account_flip_select_by_flip_key:
+  sql: |
+    select 
+    flip.account_id, 
+    flip.flip_key,
+    account.email,
+    account.username
+    from account_flip as flip
+    inner join account on flip.account_id=account.id
+    where flip.account_id<>'[user_id]' and flip.flip_key=?;
+  params:
+    -
+      type: s
+      value: rs:flip_key
+  select:
+    - account_id
+    - flip_key
+    - email
+    - username
+account_flip_insert:
+  sql: |
+    insert into account_flip (account_id, flip_key, created_by) values (?, ?, '[user_id]');
+  params:
+    -
+      type: s
+      value: rs:account_id
+    -
+      type: s
+      value: rs:flip_key
+account_flip_delete:
+  sql: |
+    delete from account_flip where account_id=? and flip_key=?;
+  params:
+    -
+      type: s
+      value: rs:account_id
+    -
+      type: s
+      value: rs:flip_key
+  
