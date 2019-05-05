@@ -1,0 +1,19 @@
+type: div
+attribute:
+  class: alert alert-primary
+  style: 'min-height:60px'
+innerHTML:
+  -
+    type: div
+    innerHTML:
+      -
+        type: span
+        attribute:
+          style: 'float:right;font-style:italic'
+        innerHTML: Current account
+      -
+        type: strong
+        innerHTML: Username
+      -
+        type: span
+        innerHTML: rs:username

@@ -30,7 +30,8 @@ account_flip_select_by_flip_key:
     account.username
     from account_flip as flip
     inner join account on flip.account_id=account.id
-    where flip.account_id<>'[user_id]' and flip.flip_key=?;
+    where flip.flip_key=?
+    order by account.username, account.email;
   params:
     -
       type: s

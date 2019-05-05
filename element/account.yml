@@ -17,8 +17,8 @@ innerHTML:
       -
         type: a
         attribute:
-          class: btn btn-warning
-          style: 'float:right'
+          class: btn btn-secondary
+          style: 'float:right;margin-right:10px'
           data-u: rs:username
           onclick: "if(!confirm('Are you sure?')){return false;}else{$.ajax({url : '/account_flip/delete?u='+this.getAttribute('data-u'), type : 'get', async: false, success : function(data) { PluginWfAjax.update('modal_account_flip_body'); }});}"
         innerHTML: Delete

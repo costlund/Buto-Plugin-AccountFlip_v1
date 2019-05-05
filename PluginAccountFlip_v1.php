@@ -27,7 +27,11 @@ class PluginAccountFlip_v1{
     $data = $this->getData();
     $accounts = array();
     foreach ($data->get('accounts') as $key => $value) {
-      $account = new PluginWfYml(__DIR__.'/element/account.yml');
+      if($value['account_id']!=$data->get('current/account_id')){
+        $account = new PluginWfYml(__DIR__.'/element/account.yml');
+      }else{
+        $account = new PluginWfYml(__DIR__.'/element/account_current.yml');
+      }
       $account->setByTag($value);
       $accounts[] = $account->get();
     }

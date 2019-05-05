@@ -1,7 +1,11 @@
 -
+  type: style
+  innerHTML: "#account_flip strong:after{content: ':'}"
+-
   type: div
   attribute:
     class: row
+    id: account_flip
   innerHTML:
     -
       type: div
@@ -9,35 +13,8 @@
         class: col-md-12
       innerHTML:
         -
-          type: h1
-          innerHTML: Current account
-    -
-      type: div
-      attribute:
-        class: col-md-12
-      innerHTML:
-        -
-          type: div
-          attribute:
-            class: alert alert-primary
-          innerHTML:
-            -
-              type: div
-              innerHTML:
-                -
-                  type: strong
-                  innerHTML: Username
-                -
-                  type: span
-                  innerHTML: flip:username
-    -
-      type: div
-      attribute:
-        class: col-md-12
-      innerHTML:
-        -
           type: h2
-          innerHTML: Other accounts
+          innerHTML: Account
     -
       type: div
       attribute:
@@ -48,19 +25,8 @@
       attribute:
         class: col-md-12
       innerHTML:
-        -      
-          type: div
+        -
+          type: a
           attribute:
-            class: alert alert-warning
-            style: 'min-height:60px'
-          innerHTML:
-            -
-              type: div
-              innerHTML:
-                -
-                  type: a
-                  attribute:
-                    class: btn btn-primary
-                    style: 'float:right'
-                    onclick: "PluginWfBootstrapjs.modal({id: 'modal_account_flip_add', url: '/account_flip/add', lable: this.innerHTML, sizezzz: 'xl'})"
-                  innerHTML: Add account
+            onclick: "PluginWfBootstrapjs.modal({id: 'modal_account_flip_add', url: '/account_flip/add', lable: this.innerHTML, sizezzz: 'xl'})"
+          innerHTML: Add account
