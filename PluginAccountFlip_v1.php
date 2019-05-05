@@ -40,7 +40,6 @@ class PluginAccountFlip_v1{
       $accounts[] = $account->get();
     }
     $element = new PluginWfYml(__DIR__.'/element/view.yml');
-    $element->setByTag($data->get('current'), 'flip');
     $element->setByTag(array('accounts' => $accounts), 'elements');
     wfDocument::renderElement($element->get());
   }
