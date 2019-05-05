@@ -3,6 +3,10 @@
   innerHTML: "#account_flip strong:after{content: ':'}"
 -
   type: div
+  settings:
+    role:
+      item:
+        - client
   attribute:
     class: row
     id: account_flip
@@ -30,3 +34,10 @@
           attribute:
             onclick: "PluginWfBootstrapjs.modal({id: 'modal_account_flip_add', url: '/account_flip/add', lable: this.innerHTML, sizezzz: 'xl'})"
           innerHTML: Add account
+-
+  type: script
+  settings:
+    role:
+      item:
+        - unknown
+  innerHTML: "location.href='/'"

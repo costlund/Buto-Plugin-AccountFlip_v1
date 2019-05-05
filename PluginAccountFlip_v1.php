@@ -13,14 +13,18 @@ class PluginAccountFlip_v1{
             ));
   }
   private function getData(){
-    $flip = $this->db->account_flip_select_by_id();
-    if(is_null($flip->get())){
-      $flip_key = $this->db->account_flip_insert_by_id();
-      $flip = $this->db->account_flip_select_by_id();
-    }
     $data = new PluginWfArray();
-    $data->set('current', $flip->get());
-    $data->set('accounts', $this->db->account_flip_select_by_flip_key($flip->get()));
+    $data->set('current', null);
+    $data->set('accounts', array());
+    if(wfUser::hasRole('client')){
+      $flip = $this->db->account_flip_select_by_id();
+      if(is_null($flip->get())){
+        $flip_key = $this->db->account_flip_insert_by_id();
+        $flip = $this->db->account_flip_select_by_id();
+      }
+      $data->set('current', $flip->get());
+      $data->set('accounts', $this->db->account_flip_select_by_flip_key($flip->get()));
+    }
     return $data;
   }
   public function page_view(){
