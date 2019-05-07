@@ -61,4 +61,11 @@ account_flip_delete:
     -
       type: s
       value: rs:flip_key
+account_flip_delete_by_id:
+  sql: |
+    delete from account_flip where account_id=?;
+  params:
+    -
+      type: s
+      value: rs:account_id
   

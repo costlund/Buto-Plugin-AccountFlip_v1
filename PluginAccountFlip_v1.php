@@ -92,7 +92,17 @@ class PluginAccountFlip_v1{
       if($exist){
         return array("alert('Account already exist!')");
       }else{
+        /**
+         * Delete if account is in table account_flip.
+         */
+        $this->db->account_flip_delete_by_id(array('account_id' => $user->get('id')));
+        /**
+         * Insert.
+         */
         $this->db->account_flip_insert(array('account_id' => $user->get('id'), 'flip_key' => $data->get('current/flip_key')));
+        /**
+         * 
+         */
         return array("$('#modal_account_flip_add').modal('hide');PluginWfAjax.update('modal_account_flip_body');");
       }
     }else{

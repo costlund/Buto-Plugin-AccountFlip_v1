@@ -69,6 +69,13 @@ class db_account_flip{
     $this->mysql->execute($sql->get());
     return null;
   }
+  public function account_flip_delete_by_id($data){
+    $this->db_open();
+    $sql = $this->sql_get('account_flip_delete_by_id');
+    $sql->setByTag($data);
+    $this->mysql->execute($sql->get());
+    return null;
+  }
   public function account_flip_select_by_flip_key($data){
     $this->db_open();
     $sql = $this->sql_get('account_flip_select_by_flip_key');
