@@ -1,15 +1,16 @@
 <?php
 class PluginAccountFlip_v1{
   public $db = null;
+  private $plugin_settings = null;
   function __construct() {
     require_once __DIR__.'/mysql/db.php';
-    $plugin_settings = wfPlugin::getPluginSettings('account/flip_v1', true);
+    $this->plugin_settings = wfPlugin::getPluginSettings('account/flip_v1', true);
     wfPlugin::includeonce('wf/yml');
     wfPlugin::includeonce('i18n/translate_v1');
     $i18n = new PluginI18nTranslate_v1();
     $i18n->set_path('/plugin/account/flip_v1/i18n');
     $this->db = new db_account_flip(array(
-      'conn' => $plugin_settings->get('settings/mysql')
+      'conn' => $this->plugin_settings->get('settings/mysql')
             ));
   }
   private function getData(){
@@ -23,7 +24,7 @@ class PluginAccountFlip_v1{
         $flip = $this->db->account_flip_select_by_id();
       }
       $data->set('current', $flip->get());
-      $data->set('accounts', $this->db->account_flip_select_by_flip_key($flip->get()));
+      $data->set('accounts', $this->db->account_flip_select_by_flip_key($flip->get(), $this->plugin_settings));
     }
     return $data;
   }

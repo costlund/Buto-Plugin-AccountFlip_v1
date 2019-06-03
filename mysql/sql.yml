@@ -27,7 +27,8 @@ account_flip_select_by_flip_key:
     flip.account_id, 
     flip.flip_key,
     account.email,
-    account.username
+    account.username,
+    ('') as org_name
     from account_flip as flip
     inner join account on flip.account_id=account.id
     where flip.flip_key=?
@@ -41,6 +42,7 @@ account_flip_select_by_flip_key:
     - flip_key
     - email
     - username
+    - org_name
 account_flip_insert:
   sql: |
     insert into account_flip (account_id, flip_key, created_by) values (?, ?, '[user_id]');

@@ -11,12 +11,21 @@ plugin_modules:
   account_flip:
     plugin: 'account/flip_v1'
 ```
+
+Mysql connection data. Parameter sql_org_name is optional to be able to retrieve name from an organization. This should be easier for user to select account in list view.
+
 ```
 plugin:
   account:
     flip_v1:
       settings:
         mysql: 'yml:/../buto_data/theme/[theme]/mysql.yml'
+        sql_org_name: |
+          select name 
+          from my_org
+          inner join my_member on my_org.id=my_member.org_id
+          where my_member.id=flip.account_id
+          limit 1
 ```
 
 

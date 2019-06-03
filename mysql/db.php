@@ -76,12 +76,16 @@ class db_account_flip{
     $this->mysql->execute($sql->get());
     return null;
   }
-  public function account_flip_select_by_flip_key($data){
+  public function account_flip_select_by_flip_key($data, $settings){
     $this->db_open();
     $sql = $this->sql_get('account_flip_select_by_flip_key');
+    if($settings->get('settings/sql_org_name')){
+      $sql->set('sql', str_replace("('') as org_name", "(".$settings->get('settings/sql_org_name').") as org_name", $sql->get('sql')));
+    }
     $sql->setByTag($data);
     $this->mysql->execute($sql->get());
-    return $this->mysql->getMany();
+    $rs = $this->mysql->getMany();
+    return $rs;
   }
   private function getSelect($sql){
     $rs = array();

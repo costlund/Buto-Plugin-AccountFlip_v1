@@ -30,10 +30,14 @@
         class: col-md-12
       innerHTML:
         -
-          type: a
-          attribute:
-            onclick: "PluginWfBootstrapjs.modal({id: 'modal_account_flip_add', url: '/account_flip/add', lable: this.innerHTML, sizezzz: 'xl'})"
-          innerHTML: Add account
+          type: p
+          innerHTML:
+            -
+              type: a
+              attribute:
+                class: btn btn-primary
+                onclick: "PluginWfBootstrapjs.modal({id: 'modal_account_flip_add', url: '/account_flip/add', lable: this.innerHTML, sizezzz: 'xl'})"
+              innerHTML: Add account
 -
   type: script
   settings:

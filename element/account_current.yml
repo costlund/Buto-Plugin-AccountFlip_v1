@@ -4,6 +4,9 @@ attribute:
   style: 'min-height:60px'
 innerHTML:
   -
+    type: h2
+    innerHTML: rs:org_name
+  -
     type: div
     innerHTML:
       -
