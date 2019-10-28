@@ -23,11 +23,6 @@
       type: div
       attribute:
         class: col-md-12
-      innerHTML: elements:accounts
-    -
-      type: div
-      attribute:
-        class: col-md-12
       innerHTML:
         -
           type: p
@@ -35,9 +30,14 @@
             -
               type: a
               attribute:
-                class: btn btn-primary
+                class: btn btn-secondary btn-sm
                 onclick: "PluginWfBootstrapjs.modal({id: 'modal_account_flip_add', url: '/account_flip/add', lable: this.innerHTML, sizezzz: 'xl'})"
               innerHTML: Add account
+    -
+      type: div
+      attribute:
+        class: col-md-12
+      innerHTML: elements:accounts
 -
   type: script
   settings:
