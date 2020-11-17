@@ -1,28 +1,28 @@
-version: '1.2.0'
+version: 1.2.0
 history:
-  '1.2.0':
+  1.2.0:
     date: '2019-10-28'
     title: Layout
     description: 'Add account before list.'
-  '1.1.0':
+  1.1.0:
     date: '2019-06-03'
     description: 'Add parameter sql_org_name to retrieve name of organisation for an account in list view.'
-  '1.0.0':
+  1.0.0:
     date: '2019-05-04'
     description: 'Manifest created.'
 plugin:
   -
     name: wf/mysql
-    version: '1.6'
+    version: 1.11.0
   -
     name: wf/yml
-    version: '1.1'
+    version: 1.2.2
   -
     name: i18n/translate_v1
-    version: '1.4'
+    version: 1.7.0
   -
     name: wf/account2
-    version: '1.7'
+    version: 1.10.5
 sys:
   -
     name: mercury
@@ -30,7 +30,7 @@ sys:
       - '1.0'
 php:
   - '7.2'
-author: Claes Östlund
-links:
+author: 'Claes Östlund'
+links: null
 description: ''
-third_part_software:
+third_part_software: null
