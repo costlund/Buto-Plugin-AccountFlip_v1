@@ -23,6 +23,9 @@ plugin:
   -
     name: wf/account2
     version: 1.10.5
+  -
+    name: form/form_v1
+    version: 1.48.2
 sys:
   -
     name: mercury
