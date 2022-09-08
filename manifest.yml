@@ -1,5 +1,9 @@
-version: 1.2.12
+version: 1.2.13
 history:
+  1.2.13:
+    date: '2022-09-08'
+    title: Versions
+    description: 'Versions update.'
   1.2.12:
     date: '2022-09-07'
     title: Versions
@@ -67,10 +71,10 @@ plugin:
     version: 1.4.1
   -
     name: i18n/translate_v1
-    version: 1.7.8
+    version: 1.9.0
   -
     name: wf/account2
-    version: 1.22.2
+    version: 1.22.3
   -
     name: form/form_v1
     version: 1.54.0
