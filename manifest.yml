@@ -1,5 +1,9 @@
-version: 1.2.15
+version: 1.2.16
 history:
+  1.2.16:
+    date: '2022-11-17'
+    title: Versions
+    description: 'Versions update.'
   1.2.15:
     date: '2022-10-13'
     title: Versions
@@ -76,16 +80,16 @@ plugin:
     version: 1.14.9
   -
     name: wf/yml
-    version: 1.5.0
+    version: 1.5.1
   -
     name: i18n/translate_v1
     version: 1.9.0
   -
     name: wf/account2
-    version: 1.23.2
+    version: 1.24.0
   -
     name: form/form_v1
-    version: 1.56.0
+    version: 1.56.2
 sys:
   -
     name: mercury
