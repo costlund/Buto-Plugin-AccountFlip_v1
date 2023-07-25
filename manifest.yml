@@ -1,5 +1,9 @@
-version: 1.2.20
+version: 1.2.21
 history:
+  1.2.21:
+    date: '2023-07-25'
+    title: Versions
+    description: 'Versions update.'
   1.2.20:
     date: '2023-05-29'
     title: Versions
@@ -102,10 +106,10 @@ plugin:
     version: 1.11.0
   -
     name: wf/account2
-    version: 1.24.4
+    version: 1.25.0
   -
     name: form/form_v1
-    version: 1.59.0
+    version: 1.59.1
 sys:
   -
     name: mercury
