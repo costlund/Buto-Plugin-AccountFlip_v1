@@ -24,7 +24,7 @@ class db_account_flip{
       foreach ($replace->get() as $key => $value) {
         if(!is_array($value)){
           $temp = $sql->get('sql');
-          $temp = str_replace('['.$key.']', $value, $temp);
+          $temp = wfPhpfunc::str_replace('['.$key.']', $value, $temp);
           $sql->set('sql', $temp);
         }
       }
@@ -80,7 +80,7 @@ class db_account_flip{
     $this->db_open();
     $sql = $this->sql_get('account_flip_select_by_flip_key');
     if($settings->get('settings/sql_org_name')){
-      $sql->set('sql', str_replace("('') as org_name", "(".$settings->get('settings/sql_org_name').") as org_name", $sql->get('sql')));
+      $sql->set('sql', wfPhpfunc::str_replace("('') as org_name", "(".$settings->get('settings/sql_org_name').") as org_name", $sql->get('sql')));
     }
     $sql->setByTag($data);
     $this->mysql->execute($sql->get());
@@ -101,7 +101,7 @@ class db_account_flip{
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
     $randomString = ''; 
     for ($i = 0; $i < $n; $i++) { 
-      $index = rand(0, strlen($characters) - 1); 
+      $index = rand(0, wfPhpfunc::strlen($characters) - 1); 
       $randomString .= $characters[$index]; 
     } 
     return $randomString; 
